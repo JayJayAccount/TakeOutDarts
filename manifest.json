@@ -1,0 +1,47 @@
+{
+  "name": "Take-Out Darts",
+  "short_name": "TODarts",
+  "start_url": "./",
+  "scope": "./",
+  "display": "fullscreen",
+  "orientation": "portrait-primary",
+  "background_color": "#450a0a",
+  "theme_color": "#450a0a",
+  "description": "Portion-controlled practice for dart players. Samsung Galaxy S25 optimized.",
+  "categories": ["games", "sports"],
+  "screenshots": [
+    {
+      "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1NDAgNzIwIj48cmVjdCB3aWR0aD0iNTQwIiBoZWlnaHQ9IjcyMCIgZmlsbD0iIzQ1MGEwYSIvPjx0ZXh0IHg9IjI3MCIgeT0iMzYwIiBmb250LXNpemU9IjEyMCIgZmlsbD0iI2ZhY2MxNSIgZm9udC1mYW1pbHk9IkJ1bmdlZSIgZHk9Ii4zNWVtIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5UZWRBIGJ1dHQ8L3RleHQ+PC9zdmc+",
+      "sizes": "540x720",
+      "type": "image/svg+xml",
+      "form_factor": "narrow"
+    }
+  ],
+  "icons": [
+    {
+      "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiBmaWxsPSIjZTExZDQ4Ii8+PHRleHQgeD0iMzIiIHk9IjMyIiBmb250LXNpemU9IjMwIiBmaWxsPSIjZmFjYzE1IiBmb250LWZhbWlseT0iQnVuZ2VlIiBkeT0iLjM1ZW0iIHRleHQtYW5jaG9yPSJtaWRkbGUiPlRPPC90ZXh0Pjwvc3ZnPg==",
+      "sizes": "64x64",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjggMTI4Ij48cmVjdCB3aWR0aD0iMTI4IiBoZWlnaHQ9IjEyOCIgZmlsbD0iI2UxMWQ0OCIvPjx0ZXh0IHg9IjY0IiB5PSI2NCIgZm9udC1zaXplPSI2MCIgZmlsbD0iI2ZhY2MxNSIgZm9udC1mYW1pbHk9IkJ1bmhlZSIgZHk9Ii4zNWVtIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5UTzwvdGV4dD48L3N2Zz4=",
+      "sizes": "128x128",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTYgMjU2Ij48cmVjdCB3aWR0aD0iMjU2IiBoZWlnaHQ9IjI1NiIgZmlsbD0iI2UxMWQ0OCIvPjx0ZXh0IHg9IjEyOCIgeT0iMTI4IiBmb250LXNpemU9IjEyMCIgZmlsbD0iI2ZhY2MxNSIgZm9udC1mYW1pbHk9IkJ1bmhlZSIgZHk9Ii4zNWVtIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5UTzwvdGV4dD48L3N2Zz4=",
+      "sizes": "256x256",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cmVjdCB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgZmlsbD0iI2UxMWQ0OCIvPjx0ZXh0IHg9IjI1NiIgeT0iMjU2IiBmb250LXNpemU9IjI0MCIgZmlsbD0iI2ZhY2MxNSIgZm9udC1mYW1pbHk9IkJ1bmhlZSIgZHk9Ii4zNWVtIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5UTzwvdGV4dD48L3N2Zz4=",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "prefer_related_applications": false
+}
