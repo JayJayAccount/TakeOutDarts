@@ -99,7 +99,14 @@
             box-shadow: 0 4px 0px #4c0519;
         }
 
-        .btn-success:active, .btn-fail:active {
+        .btn-subtract {
+            background: #f97316;
+            color: white;
+            border: 4px solid #1e293b;
+            box-shadow: 0 4px 0px #d97706;
+        }
+
+        .btn-success:active, .btn-fail:active, .btn-subtract:active {
             transform: translateY(2px);
             box-shadow: 0 2px 0px #1e293b;
         }
@@ -247,7 +254,8 @@
             totalRounds: 3,
             currentRound: 0,
             successes: 0,
-            currentScore: 0
+            currentScore: 0,
+            currentDarts: 0
         };
 
         const config = {
@@ -338,11 +346,12 @@
                     <span class="text-yellow-400">${gameState.range.label} - ${gameState.difficulty.label}</span>
                 </div>
                 <div class="flex-1 flex flex-col items-center justify-center p-4 text-center">
-                    <div class="bg-yellow-400 px-3 py-0.5 rounded-full border-2 border-slate-900 text-slate-900 font-black text-[10px] mb-2 uppercase">
-                        ${gameState.difficulty.darts} Darts to take out
+                    <div class="bg-yellow-400 px-3 py-0.5 rounded-full border-[2.5px] border-slate-900 text-slate-900 font-black text-[12.5px] mb-2 uppercase">
+                        ${gameState.currentDarts} Darts to take out
                     </div>
                     <div class="score-display mb-2">${gameState.currentScore}</div>
                     <button onclick="resetAll()" class="text-slate-500 hover:bg-slate-100 font-bold text-[10px] uppercase tracking-wider mb-6 border-2 border-slate-300 px-3 py-1 rounded-full transition-colors">I'm done.</button>
+                    <button onclick="subtractDarts()" class="btn-subtract p-4 rounded-xl font-black text-lg uppercase italic mb-4">-3 darts</button>
                     <div class="w-full grid grid-cols-2 gap-4 mt-auto pb-4">
                         <button onclick="handleResult(true)" class="btn-success p-4 rounded-xl font-black text-lg uppercase italic">Win</button>
                         <button onclick="handleResult(false)" class="btn-fail p-4 rounded-xl font-black text-lg uppercase italic">Fail</button>
@@ -391,6 +400,7 @@
             gameState.currentRound = 0;
             gameState.successes = 0;
             gameState.currentScore = generateScore();
+            gameState.currentDarts = gameState.difficulty.darts;
             gameState.view = 'game';
             render();
         }
@@ -423,12 +433,29 @@
             }, 800);
         }
 
+        function showFailAnimation(callback) {
+            overlayLayer.innerHTML = `
+                <div class="celeb-overlay flex flex-col items-center justify-center">
+                    <div class="relative p-8">
+                        <div class="bg-yellow-400 border-[6px] border-slate-900 p-6 rounded-3xl shadow-[8px_8px_0px_#1e293b] rotate-[5deg]">
+                            <div class="bungee text-4xl text-slate-900 uppercase">Good Effort</div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            setTimeout(() => {
+                overlayLayer.innerHTML = '';
+                callback();
+            }, 800);
+        }
+
         function handleResult(isSuccess) {
             if (isSuccess) {
                 gameState.successes++;
                 showWinAnimation(() => proceedNext());
             } else {
-                proceedNext();
+                showFailAnimation(() => proceedNext());
             }
         }
 
@@ -436,6 +463,7 @@
             gameState.currentRound++;
             if (gameState.currentRound < gameState.totalRounds) {
                 gameState.currentScore = generateScore();
+                gameState.currentDarts = gameState.difficulty.darts;
                 render();
             } else {
                 gameState.view = 'summary';
@@ -445,8 +473,18 @@
 
         function tryAgain() { startGame(); }
         
+        function subtractDarts() {
+            if (gameState.currentDarts > 0) {
+                gameState.currentDarts -= 3;
+                if (gameState.currentDarts < 0) {
+                    gameState.currentDarts = 0;
+                }
+                render();
+            }
+        }
+        
         function resetAll() {
-            gameState = { view: 'range-selection', range: null, difficulty: null, totalRounds: 3, currentRound: 0, successes: 0, currentScore: 0 };
+            gameState = { view: 'range-selection', range: null, difficulty: null, totalRounds: 3, currentRound: 0, successes: 0, currentScore: 0, currentDarts: 0 };
             render();
         }
 
