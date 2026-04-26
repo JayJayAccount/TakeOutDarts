@@ -338,11 +338,11 @@
                     <span class="text-yellow-400">${gameState.range.label} - ${gameState.difficulty.label}</span>
                 </div>
                 <div class="flex-1 flex flex-col items-center justify-center p-4 text-center">
-                    <div class="bg-yellow-400 px-3 py-0.5 rounded-full border-2 border-slate-900 text-slate-900 font-black text-base mb-2 uppercase">
+                    <div class="bg-yellow-400 px-6 py-2 rounded-full border-2 border-slate-900 text-slate-900 font-black text-lg mb-2 uppercase">
                         ${gameState.difficulty.darts} Darts to take out
                     </div>
                     <div class="score-display mb-2">${gameState.currentScore}</div>
-                    <button onclick="resetAll()" class="text-slate-500 hover:bg-slate-100 font-bold text-[10px] uppercase tracking-wider mb-6 border-2 border-slate-300 px-3 py-1 rounded-full transition-colors">I'm done.</button>
+                    <button onclick="resetAll()" class="text-slate-500 hover:bg-slate-100 font-bold text-sm uppercase tracking-wider mb-6 border-2 border-slate-300 px-3 py-1 rounded-full transition-colors">I'm done.</button>
                     <div class="w-full grid grid-cols-2 gap-4 mt-auto pb-4">
                         <button onclick="handleResult(true)" class="btn-success p-4 rounded-xl font-black text-lg uppercase italic">Win</button>
                         <button onclick="handleResult(false)" class="btn-fail p-4 rounded-xl font-black text-lg uppercase italic">Fail</button>
